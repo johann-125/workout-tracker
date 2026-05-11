@@ -634,9 +634,12 @@ def seed():
         db.session.commit()
 
 
-with app.app_context():
-    db.create_all()
-    seed()
+try:
+    with app.app_context():
+        db.create_all()
+        seed()
+except Exception as e:
+    print(f'DB init skipped: {e}')
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
