@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Workout Summary — Liftr{% endblock %}
+{% block content %}
+
+<div class="summary-hero">
+  <div class="summary-icon">🎉</div>
+  <h1 class="summary-title">Workout Complete!</h1>
+  <p class="page-sub">{{ workout.name }} · {{ workout.started_at.strftime('%b %d, %Y') }}</p>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-value">{{ workout.total_sets }}</div>
+    <div class="stat-label">Sets Done</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">{{ workout.total_volume|int }}</div>
+    <div class="stat-label">kg Volume</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">{{ workout.duration_minutes or '—' }}</div>
+    <div class="stat-label">Minutes</div>
+  </div>
+</div>
+
+<div class="section-title">Exercises</div>
+{% for se in workout.exercises %}
+<div class="card" style="margin-bottom:12px">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
+    <div>
+      <div class="ex-card-name">{{ se.exercise.name }}</div>
+      <span class="muscle-chip">{{ se.exercise.muscle_group }}</span>
+    </div>
+  </div>
+  {% set done = se.sets | selectattr('completed') | list %}
+  {% if done %}
+  <div class="sets-table">
+    <div class="sets-header">
+      <span>Set</span><span>Weight</span><span>Reps</span><span>Est. 1RM</span>
+    </div>
+    {% for s in done %}
+    <div class="set-row completed" style="grid-template-columns:40px 1fr 1fr 1fr">
+      <span class="set-num">{{ loop.index }}</span>
+      <span style="text-align:center;font-weight:600">{{ s.weight or '—' }}</span>
+      <span style="text-align:center;font-weight:600">{{ s.reps or '—' }}</span>
+      <span style="text-align:center;color:var(--primary);font-weight:600">
+        {{ s.estimated_1rm or '—' }}
+      </span>
+    </div>
+    {% endfor %}
+  </div>
+  {% else %}
+  <p class="empty-sub">No completed sets</p>
+  {% endif %}
+</div>
+{% endfor %}
+
+<div style="display:flex;gap:12px;margin-top:24px">
+  <a href="{{ url_for('dashboard') }}" class="btn btn-outline" style="flex:1;justify-content:center">Home</a>
+  <a href="{{ url_for('history') }}" class="btn btn-ghost" style="flex:1;justify-content:center">History</a>
+</div>
+
+{% endblock %}

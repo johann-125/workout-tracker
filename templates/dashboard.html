@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard — Liftr{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <div>
+    <h1 class="page-title">Hey, {{ current_user.username }} 👋</h1>
+    <p class="page-sub">Ready to train?</p>
+  </div>
+</div>
+
+<div class="stats-row">
+  <div class="stat-card">
+    <div class="stat-value">{{ total_workouts }}</div>
+    <div class="stat-label">Total Workouts</div>
+  </div>
+  <div class="stat-card">
+    <div class="stat-value">{{ plans|length }}</div>
+    <div class="stat-label">Active Plans</div>
+  </div>
+</div>
+
+{% if active %}
+<div class="banner-active">
+  <div>
+    <div class="banner-label">Workout in progress</div>
+    <div class="banner-name">{{ active.name }}</div>
+  </div>
+  <a href="{{ url_for('workout', session_id=active.id) }}" class="btn btn-success btn-sm">Continue →</a>
+</div>
+{% endif %}
+
+<div class="section-title">Start a workout</div>
+
+{% if plans %}
+<div class="plans-quick">
+  {% for plan in plans %}
+  <form method="POST" action="{{ url_for('start_workout') }}" class="plan-quick-card">
+    <input type="hidden" name="plan_id" value="{{ plan.id }}">
+    <div class="plan-quick-name">{{ plan.name }}</div>
+    <div class="plan-quick-meta">{{ plan.exercises|length }} exercise{{ 's' if plan.exercises|length != 1 }}</div>
+    <button type="submit" class="btn btn-outline btn-sm" style="margin-top:12px">Start</button>
+  </form>
+  {% endfor %}
+  <a href="{{ url_for('new_plan') }}" class="plan-quick-card plan-quick-new">
+    <div class="plan-new-icon">+</div>
+    <div class="plan-quick-name">New Plan</div>
+  </a>
+</div>
+{% else %}
+<div class="empty-state">
+  <div class="empty-icon">📋</div>
+  <div class="empty-title">No workout plans yet</div>
+  <p class="empty-sub">Create a plan with your exercises and start training.</p>
+  <a href="{{ url_for('new_plan') }}" class="btn btn-primary" style="margin-top:16px">Create your first plan</a>
+</div>
+{% endif %}
+
+{% if recent %}
+<div class="section-title" style="margin-top:32px">Recent workouts</div>
+<div class="history-list">
+  {% for w in recent %}
+  <a href="{{ url_for('summary', session_id=w.id) }}" class="history-item">
+    <div class="history-date">
+      <div class="history-day">{{ w.started_at.strftime('%d') }}</div>
+      <div class="history-month">{{ w.started_at.strftime('%b') }}</div>
+    </div>
+    <div class="history-info">
+      <div class="history-name">{{ w.name }}</div>
+      <div class="history-meta">
+        {{ w.exercises|length }} exercise{{ 's' if w.exercises|length != 1 }}
+        · {{ w.total_sets }} sets
+        {% if w.duration_minutes %} · {{ w.duration_minutes }}min{% endif %}
+      </div>
+    </div>
+    <div class="history-vol">
+      <div class="history-vol-val">{{ w.total_volume|int }}</div>
+      <div class="history-vol-label">kg vol</div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}

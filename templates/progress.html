@@ -1,0 +1,148 @@
+{% extends 'base.html' %}
+{% block title %}Progress — Liftr{% endblock %}
+{% block head %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1 class="page-title">Progress</h1>
+</div>
+
+{% if exercises %}
+<div class="card" style="margin-bottom:24px">
+  <label class="label">Select exercise</label>
+  <select class="input" id="exercisePicker" onchange="loadProgress()">
+    {% for ex in exercises %}
+    <option value="{{ ex.id }}" data-name="{{ ex.name }}">{{ ex.name }} — {{ ex.muscle_group }}</option>
+    {% endfor %}
+  </select>
+</div>
+
+<div class="progress-charts">
+  <div class="card">
+    <div class="chart-title">Estimated 1RM over time</div>
+    <div class="chart-subtitle">Epley formula: weight × (1 + reps/30)</div>
+    <canvas id="chart1rm" height="220"></canvas>
+  </div>
+  <div class="card">
+    <div class="chart-title">Volume per session</div>
+    <div class="chart-subtitle">Total weight lifted (kg × reps)</div>
+    <canvas id="chartVolume" height="220"></canvas>
+  </div>
+</div>
+
+<!-- AI Recommendation -->
+<div class="card ai-card" style="margin-top:24px">
+  <div class="ai-header">
+    <div>
+      <div class="ai-title">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+        AI Progression Recommendation
+      </div>
+      <div class="ai-sub">Powered by Claude — analyses your last 5 sessions</div>
+    </div>
+    <button class="btn btn-primary btn-sm" id="aiBtn" onclick="getRecommendation()">Get Advice</button>
+  </div>
+  <div id="aiResult" class="ai-result" style="display:none"></div>
+</div>
+
+{% else %}
+<div class="empty-state">
+  <div class="empty-icon">📈</div>
+  <div class="empty-title">No data yet</div>
+  <p class="empty-sub">Complete workouts and log sets to see your progress charts here.</p>
+  <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="margin-top:16px">Start a workout</a>
+</div>
+{% endif %}
+
+{% endblock %}
+{% block scripts %}
+{% if exercises %}
+<script>
+let chart1rm = null;
+let chartVol = null;
+
+const chartDefaults = {
+  responsive: true,
+  plugins: { legend: { display: false } },
+  scales: {
+    x: { ticks: { color: '#64748b', font: { size: 11 } }, grid: { color: '#1e2235' } },
+    y: { ticks: { color: '#64748b', font: { size: 11 } }, grid: { color: '#1e2235' } }
+  }
+};
+
+function loadProgress() {
+  const exId = document.getElementById('exercisePicker').value;
+  fetch(`/api/exercise/${exId}/progress`)
+    .then(r => r.json())
+    .then(data => {
+      if (chart1rm) chart1rm.destroy();
+      if (chartVol) chartVol.destroy();
+
+      chart1rm = new Chart(document.getElementById('chart1rm'), {
+        type: 'line',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            data: data.e1rm,
+            borderColor: '#818cf8',
+            backgroundColor: 'rgba(129,140,248,0.1)',
+            fill: true,
+            tension: 0.4,
+            pointBackgroundColor: '#818cf8',
+            pointRadius: 4
+          }]
+        },
+        options: { ...chartDefaults }
+      });
+
+      chartVol = new Chart(document.getElementById('chartVolume'), {
+        type: 'bar',
+        data: {
+          labels: data.labels,
+          datasets: [{
+            data: data.volume,
+            backgroundColor: 'rgba(99,102,241,0.7)',
+            borderRadius: 6,
+            borderSkipped: false
+          }]
+        },
+        options: { ...chartDefaults }
+      });
+    });
+}
+
+function getRecommendation() {
+  const exId = document.getElementById('exercisePicker').value;
+  const btn = document.getElementById('aiBtn');
+  const result = document.getElementById('aiResult');
+
+  btn.disabled = true;
+  btn.textContent = 'Thinking…';
+  result.style.display = 'none';
+
+  fetch('/api/ai/recommend', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({exercise_id: parseInt(exId)})
+  })
+  .then(r => r.json())
+  .then(data => {
+    result.textContent = data.recommendation;
+    result.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Get Advice';
+  })
+  .catch(() => {
+    result.textContent = 'Something went wrong. Please try again.';
+    result.style.display = 'block';
+    btn.disabled = false;
+    btn.textContent = 'Get Advice';
+  });
+}
+
+loadProgress();
+</script>
+{% endif %}
+{% endblock %}

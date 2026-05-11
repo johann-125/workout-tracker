@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block title %}Plans — Liftr{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1 class="page-title">Workout Plans</h1>
+  <a href="{{ url_for('new_plan') }}" class="btn btn-primary btn-sm">+ New Plan</a>
+</div>
+
+{% if plans %}
+<div class="card-grid">
+  {% for plan in plans %}
+  <a href="{{ url_for('plan_detail', plan_id=plan.id) }}" class="plan-card">
+    <div class="plan-card-name">{{ plan.name }}</div>
+    {% if plan.description %}
+    <div class="plan-card-desc">{{ plan.description }}</div>
+    {% endif %}
+    <div class="plan-card-meta">
+      {{ plan.exercises|length }} exercise{{ 's' if plan.exercises|length != 1 }}
+    </div>
+    <div class="plan-card-muscles">
+      {% for pe in plan.exercises[:4] %}
+      <span class="muscle-chip">{{ pe.exercise.muscle_group }}</span>
+      {% endfor %}
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+  <div class="empty-icon">🏋️</div>
+  <div class="empty-title">No plans yet</div>
+  <p class="empty-sub">Build a workout plan by choosing exercises. Then start a session from it.</p>
+  <a href="{{ url_for('new_plan') }}" class="btn btn-primary" style="margin-top:16px">Create a plan</a>
+</div>
+{% endif %}
+
+{% endblock %}

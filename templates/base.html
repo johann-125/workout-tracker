@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Liftr{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  {% block head %}{% endblock %}
+</head>
+<body>
+  {% if current_user.is_authenticated %}
+  <nav class="nav">
+    <a href="{{ url_for('dashboard') }}" class="nav-brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6.5 6.5h11M6.5 17.5h11M4 12h16M2 9l2 3-2 3M22 9l-2 3 2 3"/></svg>
+      Liftr
+    </a>
+    <div class="nav-links">
+      <a href="{{ url_for('dashboard') }}" class="nav-link {% if request.endpoint == 'dashboard' %}active{% endif %}">Home</a>
+      <a href="{{ url_for('plans') }}" class="nav-link {% if request.endpoint in ['plans','plan_detail','new_plan','edit_plan'] %}active{% endif %}">Plans</a>
+      <a href="{{ url_for('history') }}" class="nav-link {% if request.endpoint == 'history' %}active{% endif %}">History</a>
+      <a href="{{ url_for('progress') }}" class="nav-link {% if request.endpoint == 'progress' %}active{% endif %}">Progress</a>
+    </div>
+    <a href="{{ url_for('logout') }}" class="nav-logout">Logout</a>
+  </nav>
+  {% endif %}
+
+  <main class="main {% if not current_user.is_authenticated %}main-auth{% endif %}">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for cat, msg in messages %}
+        <div class="alert alert-{{ cat }}">{{ msg }}</div>
+      {% endfor %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <div id="toast" class="toast"></div>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

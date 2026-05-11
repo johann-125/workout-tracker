@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}History — Liftr{% endblock %}
+{% block content %}
+
+<div class="page-header">
+  <h1 class="page-title">Workout History</h1>
+</div>
+
+{% if workouts %}
+<div class="history-list">
+  {% for w in workouts %}
+  <a href="{{ url_for('summary', session_id=w.id) }}" class="history-item">
+    <div class="history-date">
+      <div class="history-day">{{ w.started_at.strftime('%d') }}</div>
+      <div class="history-month">{{ w.started_at.strftime('%b') }}</div>
+    </div>
+    <div class="history-info">
+      <div class="history-name">{{ w.name }}</div>
+      <div class="history-meta">
+        {{ w.exercises|length }} exercise{{ 's' if w.exercises|length != 1 }}
+        · {{ w.total_sets }} sets
+        {% if w.duration_minutes %} · {{ w.duration_minutes }}min{% endif %}
+      </div>
+      <div class="history-exercises">
+        {% for se in w.exercises[:4] %}
+          <span class="ex-pill">{{ se.exercise.name }}</span>
+        {% endfor %}
+        {% if w.exercises|length > 4 %}
+          <span class="ex-pill">+{{ w.exercises|length - 4 }} more</span>
+        {% endif %}
+      </div>
+    </div>
+    <div class="history-vol">
+      <div class="history-vol-val">{{ w.total_volume|int }}</div>
+      <div class="history-vol-label">kg</div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+{% else %}
+<div class="empty-state">
+  <div class="empty-icon">📊</div>
+  <div class="empty-title">No workouts yet</div>
+  <p class="empty-sub">Complete your first workout and it will show here.</p>
+  <a href="{{ url_for('dashboard') }}" class="btn btn-primary" style="margin-top:16px">Go to dashboard</a>
+</div>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block title %}{{ workout.name }} — Liftr{% endblock %}
+{% block content %}
+
+<div class="workout-header">
+  <div>
+    <div class="workout-label">Active Workout</div>
+    <h1 class="workout-title">{{ workout.name }}</h1>
+  </div>
+  <div class="workout-header-right">
+    <div id="timer" class="workout-timer">00:00</div>
+    <button class="btn btn-success btn-sm" onclick="finishWorkout()">Finish</button>
+  </div>
+</div>
+
+<div id="exercisesContainer">
+  {% for se in workout.exercises %}
+  {% set prev = prev_perfs.get(se.id) %}
+  {% set prev_sets = prev.sets if prev else [] %}
+  <div class="exercise-card" id="se-{{ se.id }}">
+    <div class="ex-card-header">
+      <div>
+        <div class="ex-card-name">{{ se.exercise.name }}</div>
+        <span class="muscle-chip">{{ se.exercise.muscle_group }}</span>
+      </div>
+      <button class="btn-icon-danger" onclick="removeExercise({{ se.id }})" title="Remove">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+
+    <div class="sets-table">
+      <div class="sets-header">
+        <span>Set</span><span>Previous</span><span>Weight (kg)</span><span>Reps</span><span></span>
+      </div>
+      <div class="sets-body" id="sets-{{ se.id }}">
+        {% for s in se.sets %}
+        {% set pi = loop.index0 %}
+        {% set ps = prev_sets[pi] if pi < prev_sets|length else none %}
+        {% set prev_text = (ps.weight|string + ' × ' + ps.reps|string) if ps and ps.weight and ps.reps else '—' %}
+        <div class="set-row {{ 'completed' if s.completed }}" id="set-{{ s.id }}">
+          <span class="set-num">{{ loop.index }}</span>
+          <span class="set-prev">{{ prev_text }}</span>
+          <input type="number" class="set-input" value="{{ s.weight or '' }}" placeholder="0"
+                 step="0.5" min="0" onchange="updateSet({{ s.id }}, 'weight', this.value)">
+          <input type="number" class="set-input" value="{{ s.reps or '' }}" placeholder="0"
+                 step="1" min="0" onchange="updateSet({{ s.id }}, 'reps', this.value)">
+          <button class="complete-btn {{ 'done' if s.completed }}" onclick="toggleComplete({{ s.id }}, this)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+          </button>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="card-footer">
+      <button class="btn-add-set" onclick="addSet({{ se.id }})">+ Add Set</button>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+{% if not workout.exercises %}
+<div class="empty-state" id="emptyWorkout">
+  <div class="empty-icon">🏋️</div>
+  <div class="empty-title">No exercises yet</div>
+  <p class="empty-sub">Tap the button below to add your first exercise.</p>
+</div>
+{% endif %}
+
+<!-- FAB: Add Exercise -->
+<button class="fab" onclick="openExModal()">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+  Add Exercise
+</button>
+
+<!-- Exercise picker modal -->
+<div id="exModal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeExModal()">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title">Add Exercise</div>
+      <button class="btn-icon" onclick="closeExModal()">✕</button>
+    </div>
+    <input class="input" type="text" id="exSearch" placeholder="Search exercises…" autocomplete="off">
+    <div class="filter-chips" id="muscleChips">
+      <button class="chip active" onclick="filterMuscle('', this)">All</button>
+    </div>
+    <div id="exResults" class="ex-search-list"></div>
+  </div>
+</div>
+
+{% endblock %}
+{% block scripts %}
+<script>
+window.WORKOUT_ID = {{ workout.id }};
+window.STARTED_AT = "{{ workout.started_at.isoformat() }}";
+</script>
+<script src="{{ url_for('static', filename='js/workout.js') }}"></script>
+{% endblock %}
