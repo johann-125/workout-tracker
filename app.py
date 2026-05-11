@@ -10,7 +10,11 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'dev-secret-change-me')
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///workout.db'
+
+_db_url = os.environ.get('DATABASE_URL', 'sqlite:///workout.db')
+if _db_url.startswith('postgres://'):
+    _db_url = _db_url.replace('postgres://', 'postgresql://', 1)
+app.config['SQLALCHEMY_DATABASE_URI'] = _db_url
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
@@ -630,8 +634,9 @@ def seed():
         db.session.commit()
 
 
+with app.app_context():
+    db.create_all()
+    seed()
+
 if __name__ == '__main__':
-    with app.app_context():
-        db.create_all()
-        seed()
     app.run(debug=True, port=5000)
