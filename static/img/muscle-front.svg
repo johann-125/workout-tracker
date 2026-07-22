@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 400" class="muscle-map" data-view="front">
+  <!-- neutral silhouette parts -->
+  <g class="m-base" fill="#c7c9cf" stroke="#9a9ca3" stroke-width="1.5">
+    <circle cx="100" cy="28" r="18"/>
+    <ellipse cx="52" cy="150" rx="9" ry="14"/>
+    <ellipse cx="148" cy="150" rx="9" ry="14"/>
+    <ellipse cx="80" cy="345" rx="11" ry="7"/>
+    <ellipse cx="120" cy="345" rx="11" ry="7"/>
+    <rect x="70" y="255" width="24" height="82" rx="9"/>
+    <rect x="106" y="255" width="24" height="82" rx="9"/>
+  </g>
+
+  <!-- muscle regions: fill set dynamically via JS -->
+  <g class="m-region" fill="#c7c9cf" stroke="#9a9ca3" stroke-width="1.5">
+    <rect data-muscle="Neck" x="91" y="44" width="18" height="12" rx="4"/>
+    <circle data-muscle="Shoulders" cx="60" cy="66" r="17"/>
+    <circle data-muscle="Shoulders" cx="140" cy="66" r="17"/>
+    <path data-muscle="Chest" d="M70,58 Q100,48 130,58 L133,102 Q100,116 67,102 Z"/>
+    <rect data-muscle="Biceps" x="37" y="72" width="21" height="56" rx="10"/>
+    <rect data-muscle="Biceps" x="142" y="72" width="21" height="56" rx="10"/>
+    <rect data-muscle="Forearms" x="35" y="130" width="20" height="48" rx="9"/>
+    <rect data-muscle="Forearms" x="145" y="130" width="20" height="48" rx="9"/>
+    <rect data-muscle="Core" x="71" y="106" width="58" height="58" rx="9"/>
+    <path data-muscle="Adductors" d="M86,164 L114,164 L110,186 L100,192 L90,186 Z"/>
+    <rect data-muscle="Quadriceps" x="66" y="166" width="30" height="88" rx="11"/>
+    <rect data-muscle="Quadriceps" x="104" y="166" width="30" height="88" rx="11"/>
+  </g>
+</svg>

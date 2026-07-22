@@ -2,5 +2,7 @@ flask
 flask-sqlalchemy
 flask-login
 anthropic
+requests
+python-dotenv
 gunicorn
 psycopg2-binary

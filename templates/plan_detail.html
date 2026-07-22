@@ -26,6 +26,7 @@
     <div id="planExerciseList">
       {% for pe in plan.exercises %}
       <div class="plan-ex-row" id="pe-{{ pe.id }}">
+        <div class="ex-card-thumb" data-muscle="{{ pe.exercise.muscle_group }}" data-secondary="{{ pe.exercise.secondary_muscles or '' }}"></div>
         <div class="plan-ex-info">
           <div class="plan-ex-name">{{ pe.exercise.name }}</div>
           <div class="plan-ex-meta">
@@ -123,14 +124,20 @@ function renderExResults(exercises) {
   const el = document.getElementById('exResults');
   if (!exercises.length) { el.innerHTML = '<p class="empty-sub" style="padding:12px 0">No results</p>'; return; }
   el.innerHTML = exercises.map(e => `
-    <div class="ex-result-item" onclick="openModal(${e.id}, ${JSON.stringify(e.name)})">
-      <div>
-        <div class="ex-result-name">${e.name}</div>
-        <div class="ex-result-meta">${e.muscle_group} · ${e.category}</div>
+    <div class="ex-result-item" data-id="${e.id}" data-name="${esc(e.name)}">
+      <div class="ex-result-thumb">${muscleMapHTML(e.muscle_group, e.secondary_muscles)}</div>
+      <div class="ex-result-info">
+        <div class="ex-result-name">${esc(e.name)}</div>
+        <div class="ex-result-meta">${esc(e.muscle_group)} · ${esc(e.category)}</div>
       </div>
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
     </div>`).join('');
 }
+
+document.getElementById('exResults').addEventListener('click', e => {
+  const item = e.target.closest('.ex-result-item');
+  if (item) openModal(parseInt(item.dataset.id, 10), item.dataset.name);
+});
 
 function openModal(id, name) {
   document.getElementById('modalExId').value = id;
@@ -175,10 +182,11 @@ function appendPlanExRow(pe) {
   div.className = 'plan-ex-row';
   div.id = `pe-${pe.id}`;
   div.innerHTML = `
+    <div class="ex-card-thumb">${muscleMapHTML(pe.exercise.muscle_group, pe.exercise.secondary_muscles)}</div>
     <div class="plan-ex-info">
-      <div class="plan-ex-name">${pe.exercise.name}</div>
+      <div class="plan-ex-name">${esc(pe.exercise.name)}</div>
       <div class="plan-ex-meta">
-        <span class="muscle-chip">${pe.exercise.muscle_group}</span>
+        <span class="muscle-chip">${esc(pe.exercise.muscle_group)}</span>
         <span class="ex-sets-reps">${pe.default_sets} × ${pe.default_reps} reps</span>
       </div>
     </div>

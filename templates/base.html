@@ -19,6 +19,7 @@
       <a href="{{ url_for('plans') }}" class="nav-link {% if request.endpoint in ['plans','plan_detail','new_plan','edit_plan'] %}active{% endif %}">Plans</a>
       <a href="{{ url_for('history') }}" class="nav-link {% if request.endpoint == 'history' %}active{% endif %}">History</a>
       <a href="{{ url_for('progress') }}" class="nav-link {% if request.endpoint == 'progress' %}active{% endif %}">Progress</a>
+      <a href="{{ url_for('food_log') }}" class="nav-link {% if request.endpoint == 'food_log' %}active{% endif %}">Food</a>
     </div>
     <a href="{{ url_for('logout') }}" class="nav-logout">Logout</a>
   </nav>
@@ -34,6 +35,9 @@
   </main>
 
   <div id="toast" class="toast"></div>
+  {% if current_user.is_authenticated %}
+  <script src="{{ url_for('static', filename='js/muscle-map.js') }}"></script>
+  {% endif %}
   {% block scripts %}{% endblock %}
 </body>
 </html>

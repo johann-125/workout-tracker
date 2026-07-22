@@ -18,6 +18,7 @@
 function pad(n) { return String(n).padStart(2, '0'); }
 
 // ── Exercise Modal ────────────────────────────────────────────────────────────
+// (muscleMapHTML/hydrateMuscleThumbs/esc come from static/js/muscle-map.js, loaded in base.html)
 
 let muscleFilter = '';
 let searchTimer;
@@ -25,7 +26,7 @@ let searchTimer;
 function openExModal() {
   document.getElementById('exModal').style.display = 'flex';
   loadMuscleChips();
-  searchExercises();
+  _muscleSvgReady.then(searchExercises);
   setTimeout(() => document.getElementById('exSearch')?.focus(), 50);
 }
 
@@ -75,8 +76,9 @@ function renderExResults(exercises) {
     return;
   }
   el.innerHTML = exercises.map(e => `
-    <div class="ex-result-item" onclick="addExercise(${e.id}, ${JSON.stringify(e.name)})">
-      <div>
+    <div class="ex-result-item" data-id="${e.id}" data-name="${esc(e.name)}">
+      <div class="ex-result-thumb">${muscleMapHTML(e.muscle_group, e.secondary_muscles)}</div>
+      <div class="ex-result-info">
         <div class="ex-result-name">${esc(e.name)}</div>
         <div class="ex-result-meta">${esc(e.muscle_group)} · ${esc(e.category)}</div>
       </div>
@@ -85,6 +87,11 @@ function renderExResults(exercises) {
       </svg>
     </div>`).join('');
 }
+
+document.getElementById('exResults')?.addEventListener('click', e => {
+  const item = e.target.closest('.ex-result-item');
+  if (item) addExercise(parseInt(item.dataset.id, 10), item.dataset.name);
+});
 
 document.getElementById('exSearch')?.addEventListener('input', () => {
   clearTimeout(searchTimer);
@@ -120,7 +127,8 @@ function renderExerciseCard(data) {
   div.id = `se-${data.session_exercise_id}`;
   div.innerHTML = `
     <div class="ex-card-header">
-      <div>
+      <div class="ex-card-thumb">${muscleMapHTML(data.exercise.muscle_group, data.exercise.secondary_muscles)}</div>
+      <div class="ex-card-info">
         <div class="ex-card-name">${esc(data.exercise.name)}</div>
         <span class="muscle-chip">${esc(data.exercise.muscle_group)}</span>
       </div>
@@ -222,16 +230,17 @@ function finishWorkout() {
   if (!confirm('Finish and save this workout?')) return;
   fetch(`/api/workout/${window.WORKOUT_ID}/finish`, {method: 'POST'})
     .then(r => r.json())
-    .then(data => { if (data.redirect) window.location.href = data.redirect; });
+    .then(data => {
+      if (data.new_prs?.length) {
+        showToast(`🏆 ${data.new_prs.length} new PR${data.new_prs.length > 1 ? 's' : ''}`);
+        setTimeout(() => { if (data.redirect) window.location.href = data.redirect; }, 1600);
+      } else if (data.redirect) {
+        window.location.href = data.redirect;
+      }
+    });
 }
 
 // ── Utils ─────────────────────────────────────────────────────────────────────
-
-function esc(str) {
-  const d = document.createElement('div');
-  d.appendChild(document.createTextNode(String(str)));
-  return d.innerHTML;
-}
 
 function showToast(msg) {
   const t = document.getElementById('toast');

@@ -429,8 +429,14 @@ select.input { cursor: pointer; }
   gap: 8px;
 }
 .ex-result-item:hover { border-color: var(--primary); background: rgba(99,102,241,0.08); }
+.ex-result-info { flex: 1; min-width: 0; }
 .ex-result-name { font-size: 14px; font-weight: 600; }
 .ex-result-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+/* ── Muscle-map diagrams ── */
+.ex-result-thumb, .ex-card-thumb { flex-shrink: 0; line-height: 0; }
+.ex-result-thumb svg { width: 28px; height: 56px; }
+.ex-card-thumb svg { width: 40px; height: 80px; }
 
 /* ── Chips & Pills ── */
 .muscle-chip {
@@ -443,6 +449,39 @@ select.input { cursor: pointer; }
   display: inline-block;
   white-space: nowrap;
 }
+
+.pr-chip {
+  font-size: 11px;
+  font-weight: 700;
+  color: #0d1117;
+  background: var(--warning);
+  padding: 2px 8px;
+  border-radius: 20px;
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 6px;
+}
+
+.trend-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.trend-badge.rising { color: var(--success); background: rgba(74,222,128,0.12); }
+.trend-badge.falling { color: var(--danger); background: rgba(248,113,113,0.12); }
+.trend-badge.flat, .trend-badge.stalled { color: var(--warning); background: rgba(251,191,36,0.12); }
+.trend-badge.insufficient_data { color: var(--text-muted); background: var(--bg-elevated); }
+
+.attention-row {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 14px; border-radius: var(--radius-sm); cursor: pointer;
+  background: var(--bg-elevated); margin-bottom: 6px; transition: all 0.15s;
+}
+.attention-row:hover { border-color: var(--primary); background: rgba(99,102,241,0.08); }
 
 .ex-pill {
   font-size: 11px;
@@ -481,6 +520,8 @@ select.input { cursor: pointer; }
   border-color: var(--primary);
   color: var(--primary);
 }
+.chip:disabled { opacity: 0.4; cursor: not-allowed; }
+.chip:disabled:hover { background: var(--bg-elevated); border-color: var(--border-light); color: var(--text-secondary); }
 
 /* ── Active workout ── */
 .workout-header {
@@ -515,6 +556,7 @@ select.input { cursor: pointer; }
   border-bottom: 1px solid var(--border);
   gap: 8px;
 }
+.ex-card-info { flex: 1; min-width: 0; }
 .ex-card-name { font-size: 16px; font-weight: 700; margin-bottom: 4px; }
 
 /* ── Sets Table ── */
@@ -783,4 +825,86 @@ select.input { cursor: pointer; }
 @media (max-width: 380px) {
   .sets-header .set-prev, .set-row .set-prev { display: none; }
   .sets-header, .set-row { grid-template-columns: 32px 1fr 1fr 40px; }
+}
+
+/* ── Food Log ── */
+.date-nav {
+  display: flex; align-items: center; gap: 10px;
+}
+.date-nav-label { font-size: 14px; font-weight: 600; min-width: 130px; text-align: center; }
+
+.macro-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.macro-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  text-align: center;
+}
+.macro-value { font-size: 20px; font-weight: 800; }
+.macro-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; }
+.macro-card.cal .macro-value { color: var(--primary); }
+.macro-card.protein .macro-value { color: var(--success); }
+.macro-card.carbs .macro-value { color: var(--warning); }
+.macro-card.fat .macro-value { color: #f472b6; }
+
+.meal-section { margin-bottom: 22px; }
+.meal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 8px;
+}
+.meal-name { font-size: 15px; font-weight: 700; text-transform: capitalize; }
+.meal-cal { font-size: 12px; color: var(--text-muted); font-weight: 600; margin-left: 8px; }
+
+.food-log-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  margin-bottom: 6px;
+  gap: 8px;
+}
+.food-log-info { flex: 1; min-width: 0; }
+.food-log-name { font-weight: 600; font-size: 14px; }
+.food-log-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.food-log-cal { font-size: 13px; font-weight: 700; color: var(--text); white-space: nowrap; }
+
+.btn-add-meal {
+  background: transparent; border: 1px dashed var(--border-light);
+  color: var(--text-secondary); font-size: 12px; font-weight: 600;
+  padding: 5px 12px; border-radius: 20px; cursor: pointer;
+}
+.btn-add-meal:hover { border-color: var(--primary); color: var(--primary); }
+
+.food-result-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px;
+  background: var(--bg-elevated);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 1px solid transparent;
+  gap: 8px;
+}
+.food-result-item:hover { border-color: var(--primary); background: rgba(99,102,241,0.08); }
+.food-result-info { flex: 1; min-width: 0; }
+.food-result-name { font-size: 14px; font-weight: 600; }
+.food-result-meta { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+.food-source-badge {
+  font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 20px;
+  white-space: nowrap; text-transform: uppercase; letter-spacing: 0.3px;
+}
+.food-source-badge.indian { color: var(--warning); background: rgba(251,191,36,0.12); }
+.food-source-badge.general { color: var(--primary); background: rgba(99,102,241,0.12); }
+.food-source-badge.custom { color: var(--success); background: rgba(74,222,128,0.12); }
+.food-source-badge.openfoodfacts { color: var(--text-secondary); background: var(--bg-elevated); border: 1px solid var(--border-light); }
+
+@media (max-width: 620px) {
+  .macro-row { grid-template-columns: repeat(2, 1fr); }
 }

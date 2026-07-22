@@ -30,6 +30,10 @@
     <div>
       <div class="ex-card-name">{{ se.exercise.name }}</div>
       <span class="muscle-chip">{{ se.exercise.muscle_group }}</span>
+      {% if se.exercise_id in prs_by_exercise %}
+      <span class="pr-chip">🏆 PR{{ 's' if prs_by_exercise[se.exercise_id]|length > 1 }}
+        ({{ prs_by_exercise[se.exercise_id]|join(' + ') }})</span>
+      {% endif %}
     </div>
   </div>
   {% set done = se.sets | selectattr('completed') | list %}

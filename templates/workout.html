@@ -19,7 +19,8 @@
   {% set prev_sets = prev.sets if prev else [] %}
   <div class="exercise-card" id="se-{{ se.id }}">
     <div class="ex-card-header">
-      <div>
+      <div class="ex-card-thumb" data-muscle="{{ se.exercise.muscle_group }}" data-secondary="{{ se.exercise.secondary_muscles or '' }}"></div>
+      <div class="ex-card-info">
         <div class="ex-card-name">{{ se.exercise.name }}</div>
         <span class="muscle-chip">{{ se.exercise.muscle_group }}</span>
       </div>

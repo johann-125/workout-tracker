@@ -1,0 +1,1412 @@
+[
+  {
+    "name": "Roti / Chapati",
+    "category": "indian",
+    "serving_size": "1 medium (40g)",
+    "calories": 104,
+    "protein": 3.1,
+    "carbs": 18,
+    "fat": 2.5,
+    "serving_grams": 40.0
+  },
+  {
+    "name": "Phulka",
+    "category": "indian",
+    "serving_size": "1 piece (25g)",
+    "calories": 71,
+    "protein": 2.1,
+    "carbs": 15,
+    "fat": 0.4,
+    "serving_grams": 25.0
+  },
+  {
+    "name": "Naan",
+    "category": "indian",
+    "serving_size": "1 piece (90g)",
+    "calories": 262,
+    "protein": 8.7,
+    "carbs": 45,
+    "fat": 5.1,
+    "serving_grams": 90.0
+  },
+  {
+    "name": "Paratha, plain",
+    "category": "indian",
+    "serving_size": "1 piece (60g)",
+    "calories": 210,
+    "protein": 4.3,
+    "carbs": 27,
+    "fat": 10,
+    "serving_grams": 60.0
+  },
+  {
+    "name": "Aloo Paratha",
+    "category": "indian",
+    "serving_size": "1 piece (100g)",
+    "calories": 280,
+    "protein": 5.9,
+    "carbs": 36,
+    "fat": 12,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Puri",
+    "category": "indian",
+    "serving_size": "1 piece (30g)",
+    "calories": 101,
+    "protein": 2,
+    "carbs": 12,
+    "fat": 5,
+    "serving_grams": 30.0
+  },
+  {
+    "name": "Steamed Rice",
+    "category": "indian",
+    "serving_size": "1 cup cooked (150g)",
+    "calories": 200,
+    "protein": 4.1,
+    "carbs": 44,
+    "fat": 0.4,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Jeera Rice",
+    "category": "indian",
+    "serving_size": "1 cup (150g)",
+    "calories": 260,
+    "protein": 4.5,
+    "carbs": 45,
+    "fat": 7,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Vegetable Biryani",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 290,
+    "protein": 6,
+    "carbs": 45,
+    "fat": 9,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Chicken Biryani",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 350,
+    "protein": 18,
+    "carbs": 40,
+    "fat": 12,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Pulao",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 250,
+    "protein": 5,
+    "carbs": 42,
+    "fat": 7,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Idli",
+    "category": "indian",
+    "serving_size": "1 piece (35g)",
+    "calories": 39,
+    "protein": 1.5,
+    "carbs": 8,
+    "fat": 0.2,
+    "serving_grams": 35.0
+  },
+  {
+    "name": "Dosa, plain",
+    "category": "indian",
+    "serving_size": "1 piece (80g)",
+    "calories": 168,
+    "protein": 3.5,
+    "carbs": 28,
+    "fat": 4.5,
+    "serving_grams": 80.0
+  },
+  {
+    "name": "Masala Dosa",
+    "category": "indian",
+    "serving_size": "1 piece (150g)",
+    "calories": 330,
+    "protein": 6,
+    "carbs": 45,
+    "fat": 13,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Uttapam",
+    "category": "indian",
+    "serving_size": "1 piece (100g)",
+    "calories": 180,
+    "protein": 4,
+    "carbs": 30,
+    "fat": 4,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Medu Vada",
+    "category": "indian",
+    "serving_size": "1 piece (50g)",
+    "calories": 150,
+    "protein": 4,
+    "carbs": 15,
+    "fat": 8,
+    "serving_grams": 50.0
+  },
+  {
+    "name": "Upma",
+    "category": "indian",
+    "serving_size": "1 cup (150g)",
+    "calories": 230,
+    "protein": 5,
+    "carbs": 35,
+    "fat": 7,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Poha",
+    "category": "indian",
+    "serving_size": "1 cup (150g)",
+    "calories": 250,
+    "protein": 4,
+    "carbs": 42,
+    "fat": 7,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Khichdi",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 220,
+    "protein": 7,
+    "carbs": 38,
+    "fat": 4,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Dal Tadka",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 190,
+    "protein": 9,
+    "carbs": 25,
+    "fat": 6,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Dal Makhani",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 320,
+    "protein": 12,
+    "carbs": 30,
+    "fat": 18,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Chana Masala",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 270,
+    "protein": 11,
+    "carbs": 35,
+    "fat": 9,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Rajma",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 260,
+    "protein": 11,
+    "carbs": 38,
+    "fat": 6,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Sambar",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 140,
+    "protein": 6,
+    "carbs": 20,
+    "fat": 4,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Moong Dal, cooked",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 210,
+    "protein": 14,
+    "carbs": 32,
+    "fat": 1,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Toor Dal, cooked",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 190,
+    "protein": 12,
+    "carbs": 30,
+    "fat": 1.5,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Paneer, raw",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 265,
+    "protein": 18,
+    "carbs": 3.5,
+    "fat": 21,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Paneer Butter Masala",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 450,
+    "protein": 15,
+    "carbs": 20,
+    "fat": 35,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Palak Paneer",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 320,
+    "protein": 14,
+    "carbs": 12,
+    "fat": 25,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Shahi Paneer",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 420,
+    "protein": 14,
+    "carbs": 18,
+    "fat": 32,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Paneer Tikka",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 280,
+    "protein": 18,
+    "carbs": 8,
+    "fat": 20,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Curd / Dahi, plain",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 120,
+    "protein": 7,
+    "carbs": 9,
+    "fat": 6,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Lassi, sweet",
+    "category": "indian",
+    "serving_size": "1 glass (250ml)",
+    "calories": 180,
+    "protein": 6,
+    "carbs": 28,
+    "fat": 5,
+    "serving_grams": 250.0
+  },
+  {
+    "name": "Buttermilk / Chaas",
+    "category": "indian",
+    "serving_size": "1 glass (250ml)",
+    "calories": 40,
+    "protein": 2,
+    "carbs": 4,
+    "fat": 1,
+    "serving_grams": 250.0
+  },
+  {
+    "name": "Ghee",
+    "category": "indian",
+    "serving_size": "1 tbsp (14g)",
+    "calories": 124,
+    "protein": 0,
+    "carbs": 0,
+    "fat": 14,
+    "serving_grams": 14.0
+  },
+  {
+    "name": "Chicken Curry",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 280,
+    "protein": 25,
+    "carbs": 8,
+    "fat": 17,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Butter Chicken",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 490,
+    "protein": 24,
+    "carbs": 12,
+    "fat": 38,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Tandoori Chicken",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 190,
+    "protein": 27,
+    "carbs": 3,
+    "fat": 8,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Chicken Tikka",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 210,
+    "protein": 26,
+    "carbs": 4,
+    "fat": 10,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Egg Curry",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 260,
+    "protein": 14,
+    "carbs": 10,
+    "fat": 18,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Fish Curry",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 220,
+    "protein": 22,
+    "carbs": 8,
+    "fat": 11,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Mutton Curry",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 380,
+    "protein": 24,
+    "carbs": 8,
+    "fat": 27,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Keema",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 250,
+    "protein": 20,
+    "carbs": 5,
+    "fat": 17,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Aloo Gobi",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 180,
+    "protein": 4,
+    "carbs": 22,
+    "fat": 9,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Bhindi Masala",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 160,
+    "protein": 3,
+    "carbs": 15,
+    "fat": 10,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Baingan Bharta",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 150,
+    "protein": 3,
+    "carbs": 14,
+    "fat": 9,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Mixed Vegetable Curry",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 170,
+    "protein": 4,
+    "carbs": 18,
+    "fat": 9,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Sarson ka Saag",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 180,
+    "protein": 6,
+    "carbs": 12,
+    "fat": 12,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Jeera Aloo",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 210,
+    "protein": 3,
+    "carbs": 28,
+    "fat": 10,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Samosa",
+    "category": "indian",
+    "serving_size": "1 piece (60g)",
+    "calories": 260,
+    "protein": 4,
+    "carbs": 28,
+    "fat": 15,
+    "serving_grams": 60.0
+  },
+  {
+    "name": "Kachori",
+    "category": "indian",
+    "serving_size": "1 piece (50g)",
+    "calories": 220,
+    "protein": 4,
+    "carbs": 22,
+    "fat": 13,
+    "serving_grams": 50.0
+  },
+  {
+    "name": "Pakora",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 280,
+    "protein": 6,
+    "carbs": 25,
+    "fat": 18,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Dhokla",
+    "category": "indian",
+    "serving_size": "100 g",
+    "calories": 160,
+    "protein": 6,
+    "carbs": 25,
+    "fat": 4,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Bhel Puri",
+    "category": "indian",
+    "serving_size": "1 cup (100g)",
+    "calories": 180,
+    "protein": 4,
+    "carbs": 30,
+    "fat": 5,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Pani Puri",
+    "category": "indian",
+    "serving_size": "6 pieces",
+    "calories": 150,
+    "protein": 3,
+    "carbs": 25,
+    "fat": 4,
+    "serving_grams": 90.0
+  },
+  {
+    "name": "Vada Pav",
+    "category": "indian",
+    "serving_size": "1 piece (120g)",
+    "calories": 290,
+    "protein": 6,
+    "carbs": 40,
+    "fat": 12,
+    "serving_grams": 120.0
+  },
+  {
+    "name": "Aloo Tikki Chaat",
+    "category": "indian",
+    "serving_size": "2 pieces (120g)",
+    "calories": 260,
+    "protein": 5,
+    "carbs": 32,
+    "fat": 12,
+    "serving_grams": 120.0
+  },
+  {
+    "name": "Gulab Jamun",
+    "category": "indian",
+    "serving_size": "1 piece (40g)",
+    "calories": 150,
+    "protein": 2,
+    "carbs": 20,
+    "fat": 7,
+    "serving_grams": 40.0
+  },
+  {
+    "name": "Jalebi",
+    "category": "indian",
+    "serving_size": "1 piece (25g)",
+    "calories": 105,
+    "protein": 1,
+    "carbs": 17,
+    "fat": 4,
+    "serving_grams": 25.0
+  },
+  {
+    "name": "Besan Ladoo",
+    "category": "indian",
+    "serving_size": "1 piece (30g)",
+    "calories": 130,
+    "protein": 2.5,
+    "carbs": 16,
+    "fat": 6.5,
+    "serving_grams": 30.0
+  },
+  {
+    "name": "Kheer",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 240,
+    "protein": 6,
+    "carbs": 35,
+    "fat": 8,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Gajar ka Halwa",
+    "category": "indian",
+    "serving_size": "1 cup (150g)",
+    "calories": 300,
+    "protein": 4,
+    "carbs": 35,
+    "fat": 16,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Rasgulla",
+    "category": "indian",
+    "serving_size": "1 piece (40g)",
+    "calories": 106,
+    "protein": 2,
+    "carbs": 22,
+    "fat": 1,
+    "serving_grams": 40.0
+  },
+  {
+    "name": "Barfi",
+    "category": "indian",
+    "serving_size": "1 piece (25g)",
+    "calories": 100,
+    "protein": 2,
+    "carbs": 12,
+    "fat": 5,
+    "serving_grams": 25.0
+  },
+  {
+    "name": "Masala Chai",
+    "category": "indian",
+    "serving_size": "1 cup (150ml)",
+    "calories": 80,
+    "protein": 2,
+    "carbs": 10,
+    "fat": 3,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Filter Coffee",
+    "category": "indian",
+    "serving_size": "1 cup (150ml)",
+    "calories": 70,
+    "protein": 2,
+    "carbs": 8,
+    "fat": 3,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Coconut Water",
+    "category": "indian",
+    "serving_size": "1 cup (240ml)",
+    "calories": 46,
+    "protein": 0.5,
+    "carbs": 9,
+    "fat": 0.5,
+    "serving_grams": 240.0
+  },
+  {
+    "name": "Nimbu Pani",
+    "category": "indian",
+    "serving_size": "1 glass (250ml)",
+    "calories": 60,
+    "protein": 0,
+    "carbs": 15,
+    "fat": 0,
+    "serving_grams": 250.0
+  },
+  {
+    "name": "Chole Bhature",
+    "category": "indian",
+    "serving_size": "1 plate (300g)",
+    "calories": 620,
+    "protein": 15,
+    "carbs": 75,
+    "fat": 28,
+    "serving_grams": 300.0
+  },
+  {
+    "name": "Rava Dosa",
+    "category": "indian",
+    "serving_size": "1 piece (90g)",
+    "calories": 200,
+    "protein": 4,
+    "carbs": 30,
+    "fat": 7,
+    "serving_grams": 90.0
+  },
+  {
+    "name": "Curd Rice",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 210,
+    "protein": 6,
+    "carbs": 32,
+    "fat": 6,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Lemon Rice",
+    "category": "indian",
+    "serving_size": "1 cup (180g)",
+    "calories": 240,
+    "protein": 4,
+    "carbs": 38,
+    "fat": 8,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Bisi Bele Bath",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 260,
+    "protein": 7,
+    "carbs": 40,
+    "fat": 8,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Rasam",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 60,
+    "protein": 2,
+    "carbs": 10,
+    "fat": 1.5,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Malai Kofta",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 400,
+    "protein": 9,
+    "carbs": 25,
+    "fat": 30,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Kadai Paneer",
+    "category": "indian",
+    "serving_size": "1 cup (200g)",
+    "calories": 350,
+    "protein": 15,
+    "carbs": 14,
+    "fat": 26,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Egg Bhurji",
+    "category": "indian",
+    "serving_size": "2 eggs (120g)",
+    "calories": 220,
+    "protein": 13,
+    "carbs": 4,
+    "fat": 17,
+    "serving_grams": 120.0
+  },
+  {
+    "name": "Papad, roasted",
+    "category": "indian",
+    "serving_size": "1 piece (10g)",
+    "calories": 35,
+    "protein": 2,
+    "carbs": 6,
+    "fat": 0.5,
+    "serving_grams": 10.0
+  },
+  {
+    "name": "Pickle / Achaar",
+    "category": "indian",
+    "serving_size": "1 tbsp (15g)",
+    "calories": 35,
+    "protein": 0.2,
+    "carbs": 2,
+    "fat": 3,
+    "serving_grams": 15.0
+  },
+  {
+    "name": "Apple",
+    "category": "general",
+    "serving_size": "1 medium (180g)",
+    "calories": 95,
+    "protein": 0.5,
+    "carbs": 25,
+    "fat": 0.3,
+    "serving_grams": 180.0
+  },
+  {
+    "name": "Banana",
+    "category": "general",
+    "serving_size": "1 medium (118g)",
+    "calories": 105,
+    "protein": 1.3,
+    "carbs": 27,
+    "fat": 0.4,
+    "serving_grams": 118.0
+  },
+  {
+    "name": "Orange",
+    "category": "general",
+    "serving_size": "1 medium (130g)",
+    "calories": 62,
+    "protein": 1.2,
+    "carbs": 15,
+    "fat": 0.2,
+    "serving_grams": 130.0
+  },
+  {
+    "name": "Mango",
+    "category": "general",
+    "serving_size": "1 cup sliced (165g)",
+    "calories": 99,
+    "protein": 1.4,
+    "carbs": 25,
+    "fat": 0.6,
+    "serving_grams": 165.0
+  },
+  {
+    "name": "Grapes",
+    "category": "general",
+    "serving_size": "1 cup (150g)",
+    "calories": 104,
+    "protein": 1.1,
+    "carbs": 27,
+    "fat": 0.2,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Watermelon",
+    "category": "general",
+    "serving_size": "1 cup (150g)",
+    "calories": 46,
+    "protein": 0.9,
+    "carbs": 11,
+    "fat": 0.2,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Papaya",
+    "category": "general",
+    "serving_size": "1 cup (145g)",
+    "calories": 62,
+    "protein": 0.7,
+    "carbs": 16,
+    "fat": 0.2,
+    "serving_grams": 145.0
+  },
+  {
+    "name": "Pineapple",
+    "category": "general",
+    "serving_size": "1 cup (165g)",
+    "calories": 82,
+    "protein": 0.9,
+    "carbs": 22,
+    "fat": 0.2,
+    "serving_grams": 165.0
+  },
+  {
+    "name": "Strawberries",
+    "category": "general",
+    "serving_size": "1 cup (150g)",
+    "calories": 48,
+    "protein": 1,
+    "carbs": 11,
+    "fat": 0.5,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "Pomegranate",
+    "category": "general",
+    "serving_size": "1 cup arils (174g)",
+    "calories": 144,
+    "protein": 3,
+    "carbs": 33,
+    "fat": 2,
+    "serving_grams": 174.0
+  },
+  {
+    "name": "Avocado",
+    "category": "general",
+    "serving_size": "1/2 fruit (100g)",
+    "calories": 160,
+    "protein": 2,
+    "carbs": 9,
+    "fat": 15,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Broccoli, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 35,
+    "protein": 2.4,
+    "carbs": 7,
+    "fat": 0.4,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Spinach, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 23,
+    "protein": 3,
+    "carbs": 3.8,
+    "fat": 0.3,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Carrot, raw",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 41,
+    "protein": 0.9,
+    "carbs": 10,
+    "fat": 0.2,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Tomato, raw",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 18,
+    "protein": 0.9,
+    "carbs": 3.9,
+    "fat": 0.2,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Cucumber, raw",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 15,
+    "protein": 0.7,
+    "carbs": 3.6,
+    "fat": 0.1,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Potato, boiled",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 87,
+    "protein": 1.9,
+    "carbs": 20,
+    "fat": 0.1,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Sweet Potato, boiled",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 90,
+    "protein": 2,
+    "carbs": 21,
+    "fat": 0.1,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Onion, raw",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 40,
+    "protein": 1.1,
+    "carbs": 9,
+    "fat": 0.1,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Chicken Breast, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 165,
+    "protein": 31,
+    "carbs": 0,
+    "fat": 3.6,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Chicken Thigh, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 209,
+    "protein": 26,
+    "carbs": 0,
+    "fat": 11,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Egg, whole boiled",
+    "category": "general",
+    "serving_size": "1 large (50g)",
+    "calories": 78,
+    "protein": 6.3,
+    "carbs": 0.6,
+    "fat": 5.3,
+    "serving_grams": 50.0
+  },
+  {
+    "name": "Egg White",
+    "category": "general",
+    "serving_size": "1 large (33g)",
+    "calories": 17,
+    "protein": 3.6,
+    "carbs": 0.2,
+    "fat": 0.1,
+    "serving_grams": 33.0
+  },
+  {
+    "name": "Salmon, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 208,
+    "protein": 22,
+    "carbs": 0,
+    "fat": 13,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Tuna, canned in water",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 116,
+    "protein": 26,
+    "carbs": 0,
+    "fat": 1,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Beef, lean cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 250,
+    "protein": 26,
+    "carbs": 0,
+    "fat": 15,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Shrimp, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 99,
+    "protein": 24,
+    "carbs": 0.2,
+    "fat": 0.3,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Tofu, firm",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 144,
+    "protein": 15,
+    "carbs": 3,
+    "fat": 8,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Lentils, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 116,
+    "protein": 9,
+    "carbs": 20,
+    "fat": 0.4,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Chickpeas, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 164,
+    "protein": 9,
+    "carbs": 27,
+    "fat": 2.6,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Black Beans, cooked",
+    "category": "general",
+    "serving_size": "100 g",
+    "calories": 132,
+    "protein": 8.9,
+    "carbs": 24,
+    "fat": 0.5,
+    "serving_grams": 100.0
+  },
+  {
+    "name": "Milk, whole",
+    "category": "general",
+    "serving_size": "1 cup (244g)",
+    "calories": 149,
+    "protein": 8,
+    "carbs": 12,
+    "fat": 8,
+    "serving_grams": 244.0
+  },
+  {
+    "name": "Milk, skim",
+    "category": "general",
+    "serving_size": "1 cup (245g)",
+    "calories": 83,
+    "protein": 8,
+    "carbs": 12,
+    "fat": 0.2,
+    "serving_grams": 245.0
+  },
+  {
+    "name": "Greek Yogurt, plain",
+    "category": "general",
+    "serving_size": "1 cup (245g)",
+    "calories": 150,
+    "protein": 25,
+    "carbs": 9,
+    "fat": 4,
+    "serving_grams": 245.0
+  },
+  {
+    "name": "Cheddar Cheese",
+    "category": "general",
+    "serving_size": "1 oz (28g)",
+    "calories": 113,
+    "protein": 7,
+    "carbs": 0.4,
+    "fat": 9,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Cottage Cheese",
+    "category": "general",
+    "serving_size": "1 cup (226g)",
+    "calories": 206,
+    "protein": 28,
+    "carbs": 6,
+    "fat": 9,
+    "serving_grams": 226.0
+  },
+  {
+    "name": "Butter",
+    "category": "general",
+    "serving_size": "1 tbsp (14g)",
+    "calories": 102,
+    "protein": 0.1,
+    "carbs": 0,
+    "fat": 11.5,
+    "serving_grams": 14.0
+  },
+  {
+    "name": "White Bread",
+    "category": "general",
+    "serving_size": "1 slice (28g)",
+    "calories": 75,
+    "protein": 2.6,
+    "carbs": 14,
+    "fat": 1,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Whole Wheat Bread",
+    "category": "general",
+    "serving_size": "1 slice (28g)",
+    "calories": 69,
+    "protein": 3.6,
+    "carbs": 12,
+    "fat": 1,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Oats, cooked",
+    "category": "general",
+    "serving_size": "1 cup (234g)",
+    "calories": 166,
+    "protein": 6,
+    "carbs": 28,
+    "fat": 3.6,
+    "serving_grams": 234.0
+  },
+  {
+    "name": "White Rice, cooked",
+    "category": "general",
+    "serving_size": "1 cup (158g)",
+    "calories": 205,
+    "protein": 4.3,
+    "carbs": 45,
+    "fat": 0.4,
+    "serving_grams": 158.0
+  },
+  {
+    "name": "Brown Rice, cooked",
+    "category": "general",
+    "serving_size": "1 cup (195g)",
+    "calories": 216,
+    "protein": 5,
+    "carbs": 45,
+    "fat": 1.8,
+    "serving_grams": 195.0
+  },
+  {
+    "name": "Quinoa, cooked",
+    "category": "general",
+    "serving_size": "1 cup (185g)",
+    "calories": 222,
+    "protein": 8,
+    "carbs": 39,
+    "fat": 3.6,
+    "serving_grams": 185.0
+  },
+  {
+    "name": "Pasta, cooked",
+    "category": "general",
+    "serving_size": "1 cup (140g)",
+    "calories": 221,
+    "protein": 8,
+    "carbs": 43,
+    "fat": 1.3,
+    "serving_grams": 140.0
+  },
+  {
+    "name": "Cornflakes",
+    "category": "general",
+    "serving_size": "1 cup (28g)",
+    "calories": 100,
+    "protein": 2,
+    "carbs": 24,
+    "fat": 0.2,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Almonds",
+    "category": "general",
+    "serving_size": "1 oz (28g)",
+    "calories": 164,
+    "protein": 6,
+    "carbs": 6,
+    "fat": 14,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Peanuts",
+    "category": "general",
+    "serving_size": "1 oz (28g)",
+    "calories": 161,
+    "protein": 7,
+    "carbs": 4.6,
+    "fat": 14,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Cashews",
+    "category": "general",
+    "serving_size": "1 oz (28g)",
+    "calories": 157,
+    "protein": 5,
+    "carbs": 9,
+    "fat": 12,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Walnuts",
+    "category": "general",
+    "serving_size": "1 oz (28g)",
+    "calories": 185,
+    "protein": 4.3,
+    "carbs": 3.9,
+    "fat": 18,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Peanut Butter",
+    "category": "general",
+    "serving_size": "2 tbsp (32g)",
+    "calories": 190,
+    "protein": 8,
+    "carbs": 6,
+    "fat": 16,
+    "serving_grams": 32.0
+  },
+  {
+    "name": "Chia Seeds",
+    "category": "general",
+    "serving_size": "1 tbsp (12g)",
+    "calories": 58,
+    "protein": 2,
+    "carbs": 5,
+    "fat": 3.7,
+    "serving_grams": 12.0
+  },
+  {
+    "name": "Pizza Slice, cheese",
+    "category": "general",
+    "serving_size": "1 slice (107g)",
+    "calories": 285,
+    "protein": 12,
+    "carbs": 36,
+    "fat": 10,
+    "serving_grams": 107.0
+  },
+  {
+    "name": "Cheeseburger",
+    "category": "general",
+    "serving_size": "1 regular",
+    "calories": 300,
+    "protein": 15,
+    "carbs": 30,
+    "fat": 14,
+    "serving_grams": 150.0
+  },
+  {
+    "name": "French Fries",
+    "category": "general",
+    "serving_size": "1 medium (117g)",
+    "calories": 365,
+    "protein": 4,
+    "carbs": 48,
+    "fat": 17,
+    "serving_grams": 117.0
+  },
+  {
+    "name": "Grilled Chicken Sandwich",
+    "category": "general",
+    "serving_size": "1 sandwich",
+    "calories": 350,
+    "protein": 28,
+    "carbs": 40,
+    "fat": 8,
+    "serving_grams": 200.0
+  },
+  {
+    "name": "Caesar Salad, no dressing",
+    "category": "general",
+    "serving_size": "1 bowl (250g)",
+    "calories": 180,
+    "protein": 8,
+    "carbs": 10,
+    "fat": 12,
+    "serving_grams": 250.0
+  },
+  {
+    "name": "Black Coffee",
+    "category": "general",
+    "serving_size": "1 cup (240ml)",
+    "calories": 2,
+    "protein": 0.3,
+    "carbs": 0,
+    "fat": 0,
+    "serving_grams": 240.0
+  },
+  {
+    "name": "Orange Juice",
+    "category": "general",
+    "serving_size": "1 cup (248g)",
+    "calories": 112,
+    "protein": 1.7,
+    "carbs": 26,
+    "fat": 0.5,
+    "serving_grams": 248.0
+  },
+  {
+    "name": "Cola / Soda",
+    "category": "general",
+    "serving_size": "1 can (355ml)",
+    "calories": 140,
+    "protein": 0,
+    "carbs": 39,
+    "fat": 0,
+    "serving_grams": 355.0
+  },
+  {
+    "name": "Whey Protein Shake",
+    "category": "general",
+    "serving_size": "1 scoop w/ water (30g)",
+    "calories": 120,
+    "protein": 24,
+    "carbs": 3,
+    "fat": 1.5,
+    "serving_grams": 30.0
+  },
+  {
+    "name": "Dark Chocolate (70-85%)",
+    "category": "general",
+    "serving_size": "1 oz (28g)",
+    "calories": 170,
+    "protein": 2,
+    "carbs": 13,
+    "fat": 12,
+    "serving_grams": 28.0
+  },
+  {
+    "name": "Honey",
+    "category": "general",
+    "serving_size": "1 tbsp (21g)",
+    "calories": 64,
+    "protein": 0.1,
+    "carbs": 17,
+    "fat": 0,
+    "serving_grams": 21.0
+  }
+]

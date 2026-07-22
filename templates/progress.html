@@ -10,6 +10,11 @@
 </div>
 
 {% if exercises %}
+<div class="card" id="attentionCard" style="margin-bottom:24px;display:none">
+  <div class="chart-title">Lifts Needing Attention</div>
+  <div id="attentionList" style="margin-top:8px"></div>
+</div>
+
 <div class="card" style="margin-bottom:24px">
   <label class="label">Select exercise</label>
   <select class="input" id="exercisePicker" onchange="loadProgress()">
@@ -21,7 +26,10 @@
 
 <div class="progress-charts">
   <div class="card">
-    <div class="chart-title">Estimated 1RM over time</div>
+    <div class="chart-title">
+      Estimated 1RM over time
+      <span id="trendBadge"></span>
+    </div>
     <div class="chart-subtitle">Epley formula: weight × (1 + reps/30)</div>
     <canvas id="chart1rm" height="220"></canvas>
   </div>
@@ -110,7 +118,49 @@ function loadProgress() {
         },
         options: { ...chartDefaults }
       });
+
+      renderTrendBadge(data.e1rm_trend, data.stalled);
     });
+}
+
+function renderTrendBadge(trend, stalled) {
+  const el = document.getElementById('trendBadge');
+  if (!trend || trend.direction === 'insufficient_data') { el.innerHTML = ''; return; }
+  if (stalled) {
+    el.innerHTML = `<span class="trend-badge stalled">● Plateaued — no new PR recently</span>`;
+    return;
+  }
+  const icons = { rising: '▲ Trending up', falling: '▼ Declining', flat: '● Flat' };
+  el.innerHTML = `<span class="trend-badge ${trend.direction}">${icons[trend.direction]}</span>`;
+}
+
+function loadOverview() {
+  fetch('/api/progress/overview')
+    .then(r => r.json())
+    .then(rows => {
+      const attention = rows.filter(r => r.needs_attention);
+      const card = document.getElementById('attentionCard');
+      if (!attention.length) { card.style.display = 'none'; return; }
+      card.style.display = 'block';
+      document.getElementById('attentionList').innerHTML = attention.map(r => {
+        const reason = r.e1rm_trend.direction === 'falling' ? 'Declining'
+          : r.stalled ? 'Plateaued' : `${r.days_since_last} days since last trained`;
+        return `
+          <div class="attention-row" onclick="pickExercise(${r.exercise_id})">
+            <div>
+              <div style="font-weight:600">${esc(r.name)}</div>
+              <div style="font-size:12px;color:var(--text-muted)">${esc(r.muscle_group)}</div>
+            </div>
+            <span class="trend-badge ${r.stalled ? 'stalled' : r.e1rm_trend.direction}">${reason}</span>
+          </div>`;
+      }).join('');
+    });
+}
+
+function pickExercise(exId) {
+  document.getElementById('exercisePicker').value = exId;
+  loadProgress();
+  window.scrollTo({top: 0, behavior: 'smooth'});
 }
 
 function getRecommendation() {
@@ -143,6 +193,7 @@ function getRecommendation() {
 }
 
 loadProgress();
+loadOverview();
 </script>
 {% endif %}
 {% endblock %}
